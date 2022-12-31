@@ -1,0 +1,53 @@
+最初に作ったGPU環境を複製
+conda -n pycaret_test --clone first_GPU
+
+conda activate pycaret_test
+
+だめ
+
+
+# create a conda environment
+conda create --name yourenvname python=3.8
+
+# activate conda environment
+conda activate yourenvname
+
+# install pycaret
+pip install pycaret
+
+# create notebook kernel
+python -m ipykernel install --user --name yourenvname --display-name "display-name"
+
+pip install pycaret…だめ
+
+conda install -c conda-forge lightgbm
+conda install numpy=1.21  -c conda-forge
+conda install scikit-learn=0.23.2  -c conda-forge
+
+
+No module named 'pycaret'
+解決方法
+conda install pandas-profiling==3.1.0
+
+pycaret -> pycaret[full]に変更->だめ
+
+pip install pycaret-ts-alphaインストール
+
+
+PackagesNotFoundError: The following packages are not available from 
+対処法
+conda create -n new_pycaret -c conda-forge python=3.8
+conda install -c conda-forge [ライブラリ名]
+
+
+結局できたのは
+python3.7.3(sklearnとの兼ね合い)
+pip install pandas-profiling==3.1.0 
+pip install ipywidgets
+
+
+
+ImportError: cannot import name 'TimeSeriesExperiment' from 'pycaret.internal.pycaret_experiment' (c:\Users\large\anaconda3\envs\prepycaret2\lib\site-packages\pycaret\internal\pycaret_experiment\__init__.py)
+解決法
+pip install --pre pycaret
+
